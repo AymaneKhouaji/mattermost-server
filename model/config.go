@@ -387,6 +387,10 @@ func (o *Config) SetDefaults() {
 		o.SqlSettings.AtRestEncryptKey = NewRandomString(32)
 	}
 
+	if o.FileSettings.InitialFont == "" {
+		// Defaults to "luximbi.ttf" font.
+		o.FileSettings.InitialFont = "luximbi.ttf"
+	}
 	if o.FileSettings.AmazonS3Endpoint == "" {
 		// Defaults to "s3.amazonaws.com"
 		o.FileSettings.AmazonS3Endpoint = "s3.amazonaws.com"
